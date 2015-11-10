@@ -8,16 +8,16 @@ module.exports = function(options){
   options.dir = options.dir || __dirname;
   options.fileName = options.fileName || 'settings';
 
-  var baseFile = options.dir + '/' + options.fileName + '.json';
-
-  config.file(baseFile);
-
-  var envConfig = options.dir + '/' + options.fileName + '.' + config.get('NODE_ENV') + '.json';
+  var envConfig = options.dir + '/' + options.fileName + '.' + process.env['NODE_ENV'] + '.json';
 
   // if there is a settings.[NODE_ENV].json file (e.g settings.production.json file), load that too.
   if(glob.sync(envConfig).length > 0){
-    config.file(envConfig);
+    config.add('envConfig', { type: 'file', file: envConfig });
   }
+
+  var baseFile = options.dir + '/' + options.fileName + '.json';
+
+  config.add('base', { type: 'file', file: baseFile });
 
   if(options.reload){
     // watch the base config for changes to file and reload nconf
@@ -29,4 +29,3 @@ module.exports = function(options){
 
   return config;
 };
-

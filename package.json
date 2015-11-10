@@ -1,6 +1,6 @@
 {
   "name": "nconf-transforms",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "web.config like transforms for nconf",
   "repository": "https://github.com/e-r-w/nconf-transforms",
   "dependencies": {
