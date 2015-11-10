@@ -1,5 +1,6 @@
 var config = require('nconf');
 var watch  = require('chokidar').watch;
+var glob   = require('glob');
 
 module.exports = function(options){
 
