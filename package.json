@@ -1,7 +1,8 @@
 {
   "name": "nconf-transforms",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "web.config like transforms for nconf",
+  "repository": "https://github.com/e-r-w/nconf-transforms",
   "dependencies": {
     "chokidar": "^1.2.0",
     "nconf": "^0.8.2",

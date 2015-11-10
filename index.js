@@ -27,5 +27,6 @@ module.exports = function(options){
       });
   }
 
+  return config;
 };
 
