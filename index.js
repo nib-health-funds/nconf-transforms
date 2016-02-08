@@ -7,8 +7,9 @@ module.exports = function(options){
   options = options || {};
   options.dir = options.dir || __dirname;
   options.fileName = options.fileName || 'settings';
-
-  var envConfig = options.dir + '/' + options.fileName + '.' + process.env['NODE_ENV'] + '.json';
+  options.environment = options.environment || process.env['NODE_ENV'];
+  
+  var envConfig = options.dir + '/' + options.fileName + '.' + options.environment + '.json';
 
   // if there is a settings.[NODE_ENV].json file (e.g settings.production.json file), load that too.
   if(glob.sync(envConfig).length > 0){
