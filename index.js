@@ -13,7 +13,7 @@ module.exports = function(options){
 
   // if there is a settings.[NODE_ENV].json file (e.g settings.production.json file), load that too.
   if(glob.sync(envConfig).length > 0){
-    config.add('envConfig', { type: 'file', file: envConfig });
+    config.add('envConfig', { type: 'file', file: envConfig, format: options.format });
   }
 
   var baseFile = options.dir + '/' + options.fileName + '.json';
