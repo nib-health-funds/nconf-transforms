@@ -8,7 +8,7 @@ module.exports = function(options){
   options.dir = options.dir || __dirname;
   options.fileName = options.fileName || 'settings';
   options.environment = options.environment || process.env['NODE_ENV'];
-  
+
   var envConfig = options.dir + '/' + options.fileName + '.' + options.environment + '.json';
 
   // if there is a settings.[NODE_ENV].json file (e.g settings.production.json file), load that too.
@@ -18,7 +18,7 @@ module.exports = function(options){
 
   var baseFile = options.dir + '/' + options.fileName + '.json';
 
-  config.add('base', { type: 'file', file: baseFile });
+  config.add('base', { type: 'file', file: baseFile, format: options.format });
 
   if(options.reload){
     // watch the base config for changes to file and reload nconf
