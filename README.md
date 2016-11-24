@@ -12,6 +12,7 @@ var transform = require('nconf-transforms');
 transform({
   dir: './config',
   reload: true // reload nconf when the config file changes
+  format: require('nconf-yaml')
 });
 ```
 
@@ -52,5 +53,6 @@ Options:
 - fileName: String. The name of your configuration files (i.e `settings.json`, `settings.production.json`). Defaults to `settings`
 - reload: Boolean. Toggles reloading of configuration when the base config changes.
 - environment: String. The environment to transform to. Defaults to `process.env['NODE_ENV']`
+- format: String. The nconf file format to use. Defaults to JSON.
 
 Returns the `nconf` object so you can chain loading other configuration types/files.
