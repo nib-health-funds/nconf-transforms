@@ -1,12 +1,14 @@
 {
   "name": "@nib/nconf-transforms",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "web.config like transforms for nconf",
   "repository": "https://github.com/nib-health-funds/nconf-transforms",
   "dependencies": {
     "chokidar": "^1.2.0",
-    "nconf": "^0.8.2",
     "glob": "^5.0.15"
+  },
+  "peerDependencies": {
+    "nconf": "^0.8.2"
   },
   "main": "index.js"
 }
