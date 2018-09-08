@@ -5,8 +5,10 @@
   "repository": "https://github.com/nib-health-funds/nconf-transforms",
   "dependencies": {
     "chokidar": "^1.2.0",
-    "nconf": "^0.8.2",
     "glob": "^5.0.15"
+  },
+  "peerDependencies": {
+    "nconf": "^0.8.2"
   },
   "main": "index.js"
 }
